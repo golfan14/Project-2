@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Jmo5896/Project-2#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",

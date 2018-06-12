@@ -6,8 +6,8 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-var passport = require('passport');
-var expressSession = require('express-session');
+var session = require("express-session");
+var passport = require("./app/config/passport.js");
 
 // Sets up the Express App
 // =============================================================
@@ -18,7 +18,7 @@ var PORT = process.env.PORT || 8080;
 var db = require("./app/models");
 
 //passport set-up
-app.use(expressSession({secret: 'mySecretKey'}));
+app.use(session({secret: 'mySecretKey', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
