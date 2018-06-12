@@ -1,14 +1,16 @@
 
-var express = require("express");
-var app = express();
+// var express = require("express");
+// var app = express();
 
-var port = 3306;
+// var port = 3306;
 
 
 //homepage 
-router.get("/", function(req, res){
-    res.render("login")
-})
+module.exports = function(app){
+    app.get("/", function(req, res){
+        res.render("index");
+    })
+}
 
 
 //API endpoints for appointments 
