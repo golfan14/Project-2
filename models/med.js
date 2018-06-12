@@ -1,7 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
-    var Script = sequelize.define("Script", {
-      prescription_name: {
-        type: DataTypes.STRING,
+    var Med = sequelize.define("Med", {
+      name: {
+        type: DataTypes.STRING
+      },
+      is_prescription: {
+        type: DataTypes.BOOLEAN,
       },
       condition: {
         type: DataTypes.STRING,
@@ -10,5 +13,5 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
       }
     });
-    return Script;
+    return Med;
   };
