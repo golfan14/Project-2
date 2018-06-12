@@ -18,6 +18,15 @@ module.exports = function(sequelize, DataTypes) {
       effective_date: {
           type: DataType.DATEONLY
       }
-    });
+    })
+
+    Insurance.associate = function (models) {
+      Insurance.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+    
     return Insurance;
   };
