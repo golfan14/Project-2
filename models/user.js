@@ -21,9 +21,18 @@ module.exports = function(sequelize, DataTypes) {
   })
 
   User.associate = function(models) {
-    User.hasMany(models.Appt, models.History, models.Med, models.Insurance, {
+    User.hasMany(models.Appt, {
       onDelete: "cascade"
-    });
+    }),
+    User.hasMany(models.History, {
+      onDelete: "cascade"
+    }),
+    User.hasMany(models.Med, {
+      onDelete: "cascade"
+    }),
+    User.hasMany(models.Insurance, {
+      onDelete: "cascade"
+    })
   };
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
