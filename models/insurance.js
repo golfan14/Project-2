@@ -10,13 +10,13 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
       },
       id_number: {
-          type: DataType.INTEGER,
+          type: DataTypes.INTEGER,
       },
       group_id: {
-          type: DataType.INTEGER
+          type: DataTypes.INTEGER
       },
       effective_date: {
-          type: DataType.DATEONLY
+          type: DataTypes.DATEONLY
       }
     });
     return Insurance;
