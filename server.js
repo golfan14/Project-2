@@ -7,7 +7,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var passport = require("./app/config/passport.js");
+var passport = require("./config/passport.js");
 
 // Sets up the Express App
 // =============================================================
@@ -15,12 +15,18 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
-var db = require("./app/models");
+var db = require("./models");
 
 //passport set-up
 app.use(session({secret: 'mySecretKey', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Sets up the Express app to handle data parsing
 
