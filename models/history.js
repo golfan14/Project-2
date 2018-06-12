@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
-    var Shot = sequelize.define("Shot", {
-      immunization_name: {
+    var History = sequelize.define("History", {
+      event: {
         type: DataTypes.STRING,
       },
       date: {
         type: DataTypes.DATEONLY,
       }
     });
-    return Shot;
+    return History;
   };
