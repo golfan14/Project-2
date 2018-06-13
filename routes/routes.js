@@ -30,114 +30,116 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-// Route for getting some data about our user to be used client side
-app.get("/api/user_data", function(req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    }
-    else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
-    }
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data", function(req, res) {
+      if (!req.user) {
+        // The user is not logged in, send back an empty object
+        res.json({});
+      }
+      else {
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
+        res.json({
+          email: req.user.email,
+          id: req.user.id
+        });
+      }
+    });
+
+  //routes for CRUD operations 
+
+  //appt route
+  app.get("/user_appt", function(req, res){
+    db.Appt.findAll().then(function(data) {
+      res.json(data);
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  app.post("/create_appt", function(req, res){
+    db.Appt.findOrCreate({
+      date: req.body.date,
+      time: req.body.time,
+      type: req.body.type,
+      reason: req.body.reason
+    }).then(function() {
+      res.status(201).end();
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  //meds 
+  app.get("/user_meds", function(req, res){
+    db.Med.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
+      res.json(data);
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  app.post("/new_meds", function(req, res){
+    db.Med.create({
+      name: req.body.name,
+      type: req.body.type,
+      condition: req.body.type,
+      dose: req.body.type
+    }).then(function(){
+      res.status(201).end();
+    }).catch(function(err){
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  //history 
+  app.get("/med_history", function(req, res){
+    db.History.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
+      res.json(data);
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  app.post("/med_history", function(req, res){
+    db.History.create({
+      event: req.body.event,
+      date: req.body.date
+    }).then(function(err){
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  //insurance 
+  app.get("/insurance", function (req, res){
+    db.Insurance.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
+      res.json(data);
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+    });
+  });
+
+  app.post("/insurance", function(req, res){
+    db.Insurance.create({
+      type: req.body.type,
+      carrier: req.body.carrier,
+      insured_name: req.body.insured_name,
+      id_number: req.body.id_number,
+      group_id: req.body.group_id,
+      effective_date: req.bod.effective_date
+    }).then(function(err){
+      console.log(err);
+      res.json(err);
+    });
   });
 
 };
 
-//routes for CRUD operations 
-
-//appt route
-app.get("/user_appt", function(req, res){
-  db.Appt.findAll().then(function(data) {
-    res.json(data);
-  }).catch(function(err) {
-    console.log(err);
-    res.json(err);
-  });
-});
-
-app.post("/create_appt", function(req, res){
-  db.Appt.findOrCreate({
-    date: req.body.date,
-    time: req.body.time,
-    type: req.body.type,
-    reason: req.body.reason
-  }).then(function() {
-    res.status(201).end();
-  }).catch(function(err) {
-    console.log(err);
-    res.json(err);
-  });
-});
-
-//meds 
-app.get("/user_meds", function(req, res){
-  db.Med.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
-    res.json(data);
-  }).catch(function(err) {
-    console.log(err);
-    res.json(err);
-  });
-});
-
-app.post("/new_meds", function(req, res){
-  db.Med.create({
-    name: req.body.name,
-    type: req.body.type,
-    condition: req.body.type,
-    dose: req.body.type
-  }).then(function(){
-    res.status(201).end();
-  }).catch(function(err){
-    console.log(err);
-    res.json(err);
-  })
-})
-
-//history 
-app.get("/med_history", function(req, res){
-  db.History.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
-    res.json(data);
-  }).catch(function(err) {
-    console.log(err);
-    res.json(err);
-  });
-})
-
-app.post("/med_history", function(req, res){
-  db.History.create({
-    event: req.body.event,
-    date: req.body.date
-  }).then(function(err){
-    console.log(err);
-    res.json(err);
-  })
-})
-
-//insurance 
-app.get("/insurance", function (req, res){
-  db.Insurance.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
-    res.json(data);
-  }).catch(function(err) {
-    console.log(err);
-    res.json(err);
-  });
-})
-
-app.post("/insurance", function(req, res){
-  db.Insurance.create({
-    type: req.body.type,
-    carrier: req.body.carrier,
-    insured_name: req.body.insured_name,
-    id_number: req.body.id_number,
-    group_id: req.body.group_id,
-    effective_date: req.bod.effective_date
-  }).then(function(err){
-    console.log(err);
-    res.json(err);
-  })
-})
+  

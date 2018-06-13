@@ -3,18 +3,31 @@
 // var app = express();
 
 // var port = 3306;
-
+var isAuthenticated = require('../config/middleware/isAuthenticated.js')
 
 //homepage 
 module.exports = function(app){
-    app.get("/", function(req, res){
+    // app.get("/", function(req, res){
+    //     res.render("login");
+    // })
+
+    app.get("/", function(req, res) {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+          res.redirect("index");
+        }
         res.render("login");
     });
-    app.get("/sign", function(req, res){
-        res.render("sign_up")
+
+    app.get("/signup", function(req, res) {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+          res.redirect("index");
+        }
+        res.render("sign_up");
     });
 
-    app.get("/home", function(req, res){
+    app.get("/home", isAuthenticated, function(req, res){
         res.render("index")
     });
 };
