@@ -12,6 +12,15 @@ module.exports = function(sequelize, DataTypes) {
       dose: {
         type: DataTypes.STRING,
       }
-    });
+    })
+
+    Med.associate = function (models) {
+      Med.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
     return Med;
   };
