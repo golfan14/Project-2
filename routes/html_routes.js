@@ -9,12 +9,15 @@
 module.exports = function(app){
     app.get("/", function(req, res){
         res.render("login");
-    })
+    });
+    app.get("/sign", function(req, res){
+        res.render("sign_up")
+    });
 
     app.get("/home", function(req, res){
         res.render("index")
-    })
-}
+    });
+};
 
 
 //API endpoints for appointments 
