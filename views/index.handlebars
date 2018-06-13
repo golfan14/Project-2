@@ -61,23 +61,23 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
         <h2 class="uk-modal-title">Appt</h2>
          <legend class="uk-legend"></legend>
 
-        <form action="">
+        <form class = 'appt'>
             <div class="uk-margin">
-            <input class="uk-input" id="apptDate" type="text" placeholder="Date">
+            <input class="uk-input" id="apptDate" type="date" placeholder="Date">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" id="apptText" type="text" placeholder="Time">
+            <input class="uk-input" id="apptTime" type="time" placeholder="Time">
         </div>
         <div class="uk-margin">
             {{!-- picker --}}
             <input class="uk-input" id="apptType" type="text" placeholder="Type">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Reason">
+            <input class="uk-input" id="apptReason" type="text" placeholder="Reason">
         </div>
          <p class="uk-text-center">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button">Add</button>
+            <button class="uk-button uk-button-primary" type="submit">Add</button>
         </p>
         </form>
     </div>
@@ -153,3 +153,6 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
     </div>
 </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/logic.js"></script>

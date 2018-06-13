@@ -59,7 +59,8 @@ module.exports = function(app) {
   });
 
   app.post("/create_appt", function(req, res){
-    db.Appt.findOrCreate({
+    db.Appt.create({
+      UserId: req.user.id,
       date: req.body.date,
       time: req.body.time,
       type: req.body.type,
