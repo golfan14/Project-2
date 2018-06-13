@@ -25,7 +25,7 @@ module.exports = function(app){
         if (req.user) {
           res.redirect("index");
         }
-        res.render("sign_up");
+        res.render("sign-up");
     });
 
     app.get("/home", isAuthenticated, function(req, res){
