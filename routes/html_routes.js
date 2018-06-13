@@ -3,6 +3,7 @@
 // var app = express();
 
 // var port = 3306;
+
 var isAuthenticated = require('../config/middleware/isAuthenticated.js')
 
 //homepage 
@@ -24,11 +25,11 @@ module.exports = function(app){
         if (req.user) {
           res.redirect("index");
         }
-        res.render("sign_up");
+        res.render("sign-up");
     });
 
     app.get("/home", isAuthenticated, function(req, res){
-        res.render("index")
+        res.render("index");
     });
 };
 
