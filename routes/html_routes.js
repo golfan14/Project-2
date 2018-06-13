@@ -3,6 +3,7 @@
 // var app = express();
 
 // var port = 3306;
+
 var isAuthenticated = require('../config/middleware/isAuthenticated.js')
 
 //homepage 
