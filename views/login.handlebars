@@ -10,19 +10,24 @@
         <h2 class="uk-modal-title">Body Book</h2>
          <legend class="uk-legend">Log In</legend>
 
-        <div class="uk-margin">
-            <input id="email-input" class="uk-input" type="text" placeholder="Username">
+        <form class="login">
+            <div class="uk-margin">
+            <input class="uk-input" id="email-input" type="text" placeholder="Email">
         </div>
         <div class="uk-margin">
-            <input id="password-input" class="uk-input" type="text" placeholder="Password">
+            <input class="uk-input" id="password-input" type="text" placeholder="Password">
         </div>
          <p class="uk-text-center">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" id = 'saveBtn' type="button">Save</button>
+            <button class="uk-button uk-button-primary" type="submit">Log In</button>
         </p>
+        <p class="uk-text-center">
+            <hr>or 
+           <a href="sign_up">Sign Up</a> 
+        </p>
+        </form>
     </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
-
