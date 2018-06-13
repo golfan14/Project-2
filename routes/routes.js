@@ -7,7 +7,7 @@ module.exports = function(app) {
   // If the user has correct login info, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json("/members");
+    res.json("/user");
   });
 
   //signing up a new user
