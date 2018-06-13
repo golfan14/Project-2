@@ -19,7 +19,7 @@ module.exports = function(app){
         res.render("login");
     });
 
-    app.get("/sign-up", function(req, res) {
+    app.get("/signup", function(req, res) {
         // If the user already has an account send them to the members page
         if (req.user) {
           res.redirect("index");
@@ -29,8 +29,8 @@ module.exports = function(app){
 
     app.get("/home", isAuthenticated, function(req, res){
         res.render("index")
-    })
-}
+    });
+};
 
 
 //API endpoints for appointments 
