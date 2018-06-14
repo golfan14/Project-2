@@ -98,8 +98,8 @@ module.exports = function(app) {
       UserId: req.user.id,
       name: req.body.name,
       type: req.body.type,
-      condition: req.body.type,
-      dose: req.body.type
+      condition: req.body.condition,
+      dose: req.body.dose
     }).then(function(){
       res.status(201).end();
     }).catch(function(err){
