@@ -65,10 +65,7 @@ module.exports = function(app) {
       time: req.body.time,
       type: req.body.type,
       reason: req.body.reason
-    }).then(function(results) {
-      console.log(results);
-      connection.query("INSERT INTO (appts) VALUES (?) ;", [req.body.time, req.body.date, req.body.type, req.body.reason])
-      res.redirect("/home");
+    }).then(function() {
       res.status(201).end();
     }).catch(function(err) {
       console.log(err);
