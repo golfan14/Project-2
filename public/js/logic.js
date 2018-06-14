@@ -14,6 +14,17 @@ $(document).ready(function() {
             console.log(err);
         });
     }
+
+    // $.get("/med_history").then(function(data) {
+
+    //     for (var i = 0; i < data.length; i++) {
+    //         $(".history").append(`<li>Event: ${data[i].event}</li>\n<li>Date: ${data[i].date}</li>`);
+    //     }
+    
+    //     console.log(data);
+    // });
+
+
     medHistoryForm.on("submit", function(event) {
         event.preventDefault();
         // console.log("working");

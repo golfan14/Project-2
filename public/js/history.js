@@ -1,22 +1,17 @@
-var eventInput = $("#event");
-var dateInput = $("#date");
+$(document).ready(function(){
 
-$(hobForm).on("submit", function postBodyHistory(event){
-    event.preventDefault();
+     $.get("/med_history").then(function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+            $(".history").append(`<li>
+            <p>Event: ${data[i].event}</p>
+            <p>Date: ${data[i].date}</p></li>\n`);
+        }
     
-    if (!eventInput.val().trim() || !dateInput.val().trim()) {
-        reutrn;
-    }
-    var newPost= {
-        event: eventInput.val().trim(),
-        date: dateInput.val().trim()
-    };
-    console.log(newPost)
+        console.log(data);
+    });
 
-    if (updating){
-        newPost.id = postId;
-        updatePost(newPost);
-    }else {
-        submitPost(newPost);
-    }
-})
+});
+
+// event: req.body.event,
+// date: req.body.date
