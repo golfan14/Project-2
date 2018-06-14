@@ -59,7 +59,8 @@ module.exports = function(app) {
   });
 
   app.post("/create_appt", function(req, res){
-    db.Appt.findOrCreate({
+    db.Appt.create({
+      UserId: req.user.id,
       date: req.body.date,
       time: req.body.time,
       type: req.body.type,
@@ -74,7 +75,7 @@ module.exports = function(app) {
 
   //meds 
   app.get("/user_meds", function(req, res){
-    db.Med.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
+    db.Med.findAll({where: {UserId: req.user.id}}).then(function(data) {
       res.json(data);
     }).catch(function(err) {
       console.log(err);
@@ -84,6 +85,7 @@ module.exports = function(app) {
 
   app.post("/new_meds", function(req, res){
     db.Med.create({
+      UserId: req.user.id,
       name: req.body.name,
       type: req.body.type,
       condition: req.body.type,
@@ -98,7 +100,7 @@ module.exports = function(app) {
 
   //history 
   app.get("/med_history", function(req, res){
-    db.History.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
+    db.History.findAll({where: {UserId: req.user.id}}).then(function(data) {
       res.json(data);
     }).catch(function(err) {
       console.log(err);
@@ -108,6 +110,7 @@ module.exports = function(app) {
 
   app.post("/med_history", function(req, res){
     db.History.create({
+      UserId: req.user.id,
       event: req.body.event,
       date: req.body.date
     }).then(function(err){
@@ -118,7 +121,7 @@ module.exports = function(app) {
 
   //insurance 
   app.get("/insurance", function (req, res){
-    db.Insurance.findAll({where: {user_id: req.body.user_id}}).then(function(data) {
+    db.Insurance.findAll({where: {UserId: req.user.id}}).then(function(data) {
       res.json(data);
     }).catch(function(err) {
       console.log(err);
@@ -128,12 +131,13 @@ module.exports = function(app) {
 
   app.post("/insurance", function(req, res){
     db.Insurance.create({
+      UserId: req.user.id,
       type: req.body.type,
       carrier: req.body.carrier,
       insured_name: req.body.insured_name,
       id_number: req.body.id_number,
       group_id: req.body.group_id,
-      effective_date: req.bod.effective_date
+      effective_date: req.body.effective_date
     }).then(function(err){
       console.log(err);
       res.json(err);

@@ -1,10 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
   var Appt = sequelize.define("Appt", {
     date: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
     },
     time: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
     },
     type: {
       type: DataTypes.STRING,
