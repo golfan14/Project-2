@@ -14,17 +14,17 @@ module.exports = function(app){
 
     app.get("/", function(req, res) {
         // If the user already has an account send them to the members page
-        if (req.user) {
-          res.redirect("index");
-        }
+        // if (req.user) {
+        //   res.redirect("index");
+        // }
         res.render("login");
     });
 
     app.get("/signup", function(req, res) {
         // If the user already has an account send them to the members page
-        if (req.user) {
-          res.redirect("index");
-        }
+        // if (req.user) {
+        //   res.redirect("index");
+        // }
         res.render("sign-up");
     });
 

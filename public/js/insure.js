@@ -3,7 +3,7 @@ $(document).ready(function(){
     $.get("/insurance").then(function(data) {
 
         for (var i = 0; i < data.length; i++) {
-            $(".appointment").append(`<li>
+            $(".insurance").append(`<li>
             <p>Type: ${data[i].type}</p>
             <p>Time: ${data[i].carrier}</p>
             <p>Insured Name: ${data[i].insured_name}</p>
