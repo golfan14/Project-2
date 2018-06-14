@@ -5,7 +5,7 @@
     "database": "body_book",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306
+    "port": 8889
   },
   "test": {
     "username": "root",
@@ -15,9 +15,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "chqywhjkvu03u6dv",
-    "password": "fektan5gq5obv1iz",
-    "database": "ca7updrlp81tlwkx",
+    "username": "kow3ohi4a38ditw9",
+    "password": "dfe7ddap0j7hazsu",
+    "database": "vvy2bftk3dcmozle",
     "port": 3306,
     "host": "g3v9lgqa8h5nq05o.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
