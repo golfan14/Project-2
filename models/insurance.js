@@ -1,22 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
     var Insurance = sequelize.define("Insurance", {
       type: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
       },
       carrier: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
       },
       insured_name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
       },
       id_number: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.INTEGER
       },
       group_id: {
           type: DataTypes.INTEGER
       },
       effective_date: {
-          type: DataTypes.DATEONLY
+          type: DataTypes.STRING
       }
     })
 
