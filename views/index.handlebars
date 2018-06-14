@@ -34,17 +34,17 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
         <h2 class="uk-modal-title">History</h2>
          <legend class="uk-legend"></legend>
 
-        <form action="">
+        <form class = 'medHistory'>
             <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Event">
+            <input class="uk-input" id="medHistoryEvent" type="text" placeholder="Event">
         </div>
         <div class="uk-margin">
             {{!-- this willl use the materalize date picker --}}
-            <input class="uk-input" type="text" placeholder="Date"> 
+            <input class="uk-input" id="medHistoryDate" type="date" placeholder="Date"> 
         </div>
          <p class="uk-text-center">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button">Add</button>
+            <button class="uk-button uk-button-primary" type="submit">Add</button>
         </p>
         </form>
     </div>
@@ -125,22 +125,22 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
         <h2 class="uk-modal-title">meds</h2>
          <legend class="uk-legend"></legend>
 
-        <form action="">
+        <form class = 'meds'>
             <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Name">
+            <input class="uk-input" id="medName" type="text" placeholder="Name">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Perscription">
+            <input class="uk-input" id="medPerscription" type="boolean" placeholder="Perscription ?">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Condition">
+            <input class="uk-input" id="medCondition" type="text" placeholder="Condition">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Dose">
+            <input class="uk-input" id="medDose" type="text" placeholder="Dose">
         </div>
          <p class="uk-text-center">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button">Save</button>
+            <button class="uk-button uk-button-primary" type="submit">Save</button>
         </p>
         </form>
     </div>
@@ -157,28 +157,28 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
         <h2 class="uk-modal-title">Insurance</h2>
          <legend class="uk-legend"></legend>
 
-        <form action="">
+        <form class = 'insurance'>
             <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Type">
+            <input class="uk-input" id="insuranceType" type="text" placeholder="Type">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" type="text" placeholder="Carrier">
+            <input class="uk-input" id="insuranceCarrier" type="text" placeholder="Carrier">
         </div>
         <div class="uk-margin">
-            <input class="uk-input" id="insure_name" type="text" placeholder="Name">
+            <input class="uk-input" id="insuranceName" type="text" placeholder="Name">
         </div>
         <div class="uk-margin">
-            <input class="uk-input"id="id_number" type="text" placeholder="Number">
+            <input class="uk-input" id="insuranceIdNumber" type="number" placeholder="id number">
         </div>
         <div class="uk-margin">
-            <input class="uk-input"id="id_number" type="text" placeholder="Number">
+            <input class="uk-input" id="insuranceGroupId" type="number" placeholder="group id">
         </div>
         <div class="uk-margin">
-            <input class="uk-input"id="id_number" type="text" placeholder="Number">
+            <input class="uk-input" id="insuranceEffectiveDate" type="date" placeholder="effective date">
         </div>
          <p class="uk-text-center">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-            <button class="uk-button uk-button-primary" type="button">Save</button>
+            <button class="uk-button uk-button-primary" type="submit">Save</button>
         </p>
         </form>
     </div>
