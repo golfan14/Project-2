@@ -97,7 +97,7 @@ module.exports = function(app) {
     db.Med.create({
       UserId: req.user.id,
       name: req.body.name,
-      type: req.body.is_prescription,
+      is_prescription: req.body.is_prescription,
       condition: req.body.condition,
       dose: req.body.dose
     }).then(function(){
