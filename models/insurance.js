@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER
       },
       effective_date: {
-          type: DataTypes.STRING
+          type: DataTypes.DATEONLY
       }
     })
 

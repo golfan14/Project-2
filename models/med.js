@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING
       },
       is_prescription: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.STRING,
       },
       condition: {
         type: DataTypes.STRING,
