@@ -174,18 +174,19 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/insurance/:id", function(req, res){
+    db.Appt.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbInsurance){
+        res.json(dbInsurance);
+      });
+    });
 
 
 
 };
 
-app.delete("/insurance/:id", function(req, res){
-  db.Appt.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbInsurance){
-      res.json(dbInsurance);
-    });
-  });
+
   
