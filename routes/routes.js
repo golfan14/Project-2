@@ -73,6 +73,16 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/user_appt/:id", function(req, res){
+    db.Appt.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbAppt){
+        res.json(dbAppt);
+      });
+    });
+
   //meds 
   app.get("/user_meds", function(req, res){
     db.Med.findAll({where: {UserId: req.user.id}}).then(function(data) {
@@ -98,6 +108,16 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/user_meds/:id", function(req, res){
+    db.Appt.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbMeds){
+        res.json(dbMeds);
+      });
+    });
+
   //history 
   app.get("/med_history", function(req, res){
     db.History.findAll({where: {UserId: req.user.id}}).then(function(data) {
@@ -118,6 +138,16 @@ module.exports = function(app) {
       res.json(err);
     });
   });
+
+  app.delete("/med_history/:id", function(req, res){
+    db.Appt.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbHistory){
+        res.json(dbHistory);
+      });
+    });
 
   //insurance 
   app.get("/insurance", function (req, res){
@@ -149,4 +179,13 @@ module.exports = function(app) {
 
 };
 
+app.delete("/insurance/:id", function(req, res){
+  db.Appt.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbInsurance){
+      res.json(dbInsurance);
+    });
+  });
   
