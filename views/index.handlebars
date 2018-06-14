@@ -69,18 +69,8 @@
 <div class="box">
     <div class="uk-card uk-card-large uk-card-default uk-card-body">
       
-        <ul class="uk-list uk-list-large uk-list-divider">
-            {{!-- 
-            -Cannot get scroll to work 
-            -Connot get sizing to edit 
-            -
-            --}}
-            <li>
-                {{!-- {{#each}}
-                <h4>Event:{{event}}</h4>
-                <h4>Date:{{date}}</h4>
-                {{/each}} --}}
-            </li>
+        <ul class="uk-list uk-list-large uk-list-divider history" "new-hob">
+           
         </ul>
 
     </div>
@@ -123,21 +113,9 @@
 <div class="box">
     <div class="uk-card uk-card-large uk-card-default uk-card-body">
       
-        <ul class="uk-list uk-list-large uk-list-divider 'history'">
-            {{!-- 
-            -Cannot get scroll to work 
-            -Connot get sizing to edit 
-            -
-            --}}
-            <li >
-                {{#each Appt}}
-                <h4>Date:{{this.date}}</h4>
-                <h4>Time:{{this.time}}</h4>
-                <h4>Type:{{this.type}}</h4>
-                <h4>Reason:{{this.reason}}</h4>
 
-                {{/each}}
-            </li>
+        <ul class="uk-list uk-list-large uk-list-divider appointment">
+
         </ul>
 
     </div>
@@ -174,6 +152,20 @@
     </div>
 </div>
 
+<div class="box">
+    <div class="uk-card uk-card-large uk-card-default uk-card-body">
+      
+        <ul class="uk-list uk-list-large uk-list-divider medication">
+            {{!-- 
+            -Cannot get scroll to work 
+            -Connot get sizing to edit 
+            -
+            --}}
+           
+        </ul>
+
+    </div>
+</div>
 
 </div>
 <div class="uk-container" id="insure">
@@ -211,12 +203,26 @@
         </form>
     </div>
 </div>
+<div class="box">
+    <div class="uk-card uk-card-large uk-card-default uk-card-body">
+      
+        <ul class="uk-list uk-list-large uk-list-divider insurance">
+            {{!-- every added item goes here
+             --}}
+        </ul>
+
+    </div>
+</div>
 </div>
 
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/logic.js"></script>
+<script type="text/javascript" src="js/history.js"></script>
+<script type="text/javascript" src="js/appt.js"></script>
+<script type="text/javascript" src="js/meds.js"></script>
+<script type="text/javascript" src="js/insure.js"></script>
 
 <script>
      $(document).on('click', 'a[href^="#"]', function (event) {
@@ -231,5 +237,7 @@
     console.log($.attr(this, 'href')); //returns attribute
 
   });
+   
 
+ 
 </script>

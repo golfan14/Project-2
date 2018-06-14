@@ -50,7 +50,7 @@ module.exports = function(app) {
 
   //appt route
   app.get("/user_appt", function(req, res){
-    db.Appt.findAll().then(function(data) {
+    db.Appt.findAll({where: {UserId: req.user.id}}).then(function(data) {
       res.json(data);
     }).catch(function(err) {
       console.log(err);
@@ -143,6 +143,9 @@ module.exports = function(app) {
       res.json(err);
     });
   });
+
+
+
 
 };
 
