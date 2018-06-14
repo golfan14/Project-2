@@ -3,15 +3,15 @@
 
         <div class="uk-navbar-center-left"><div>
             <ul class="uk-navbar-nav">
-                <li><a href="#">My Body</a></li>
-                <li><a href="#">Appointments</a></li>
+                <li><a href="#history">My Body</a></li>
+                <li><a href="#appt">Appointments</a></li>
             </ul>
         </div></div>
         <a class="uk-navbar-item uk-logo" href="#">Logo</a>
         <div class="uk-navbar-center-right"><div>
             <ul class="uk-navbar-nav">
-                <li><a href="#">Medication</a></li>
-                <li><a href="#">Insurance Information</a></li>
+                <li><a href="#medication">Medication</a></li>
+                <li><a href="#insure">Insurance Information</a></li>
             </ul>
         </div></div>
 
@@ -20,12 +20,28 @@
 
 
 <div class="uk-container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae ex elit. Donec pulvinar, nisl vel aliquam hendrerit, dui libero imperdiet mauris, nec commodo justo justo in libero. Curabitur nec nibh fringilla, iaculis libero nec, fringilla leo. Proin pulvinar nisl quis magna tristique, in ultricies turpis rhoncus. Praesent volutpat velit dui, nec pretium mi dignissim non. Cras commodo tempor pretium. Suspendisse non dignissim augue. Quisque in arcu sed arcu consequat volutpat.
 
-Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus nisl felis, sollicitudin tristique purus convallis non. Maecenas interdum ante sed lacus suscipit interdum. Etiam pretium, erat non dictum auctor, odio metus auctor diam, sed dignissim mauris nisi ut lacus. Duis maximus dolor eu mi ultricies, et laoreet velit molestie. Mauris placerat dolor urna, feugiat consequat velit pulvinar tincidunt. In mollis maximus eros ac eleifend. Suspendisse dictum elementum massa. Nunc dapibus, urna at dictum tincidunt, orci nisi placerat eros, vulputate pulvinar mauris justo id nisl.</p>
+   <article class="uk-comment uk-comment-primary">
+    <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+            <img class="uk-comment-avatar" src="../docs/images/avatar.jpg" width="80" height="80" alt="">
+        </div>
+        <div class="uk-width-expand">
+            <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
+            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                {{!-- <li><a href="#">12 days ago</a></li> --}}
+                {{!-- <li><a href="#">Reply</a></li> --}}
+            </ul>
+        </div>
+    </header>
+    <div class="uk-comment-body">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    </div>
+</article>
+
 </div>
 
-<div class="uk-container">
+<div class="uk-container" id ="history">
     <a href="#hob" uk-toggle>History of Body</a>
 
 <!-- This is the modal -->
@@ -50,9 +66,30 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
     </div>
 </div>
 
+<div class="box">
+    <div class="uk-card uk-card-large uk-card-default uk-card-body">
+      
+        <ul class="uk-list uk-list-large uk-list-divider">
+            {{!-- 
+            -Cannot get scroll to work 
+            -Connot get sizing to edit 
+            -
+            --}}
+            <li>
+                {{!-- {{#each}}
+                <h4>Event:{{event}}</h4>
+                <h4>Date:{{date}}</h4>
+                {{/each}} --}}
+            </li>
+        </ul>
+
+    </div>
+</div>
 
 </div>
-<div class="uk-container">
+
+
+<div class="uk-container uk-center" id="appt">
     <a href="#appt" uk-toggle>Appointment</a>
 
 <!-- This is the modal -->
@@ -61,7 +98,7 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
         <h2 class="uk-modal-title">Appt</h2>
          <legend class="uk-legend"></legend>
 
-        <form class = 'appt'>
+        <form class = 'appt' method="POST" action="/create_appt">
             <div class="uk-margin">
             <input class="uk-input" id="apptDate" type="date" placeholder="Date">
         </div>
@@ -83,9 +120,31 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
     </div>
 </div>
 
+<div class="box">
+    <div class="uk-card uk-card-large uk-card-default uk-card-body">
+      
+        <ul class="uk-list uk-list-large uk-list-divider">
+            {{!-- 
+            -Cannot get scroll to work 
+            -Connot get sizing to edit 
+            -
+            --}}
+            <li>
+                {{#each Appt}}
+                <h4>Date:{{this.date}}</h4>
+                <h4>Time:{{this.time}}</h4>
+                <h4>Type:{{this.type}}</h4>
+                <h4>Reason:{{this.reason}}</h4>
+
+                {{/each}}
+            </li>
+        </ul>
+
+    </div>
+</div>
 
 </div>
-<div class="uk-container">
+<div class="uk-container" id="medication">
     <a href="#meds" uk-toggle>Medication</a>
 
 <!-- This is the modal -->
@@ -117,7 +176,7 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
 
 
 </div>
-<div class="uk-container">
+<div class="uk-container" id="insure">
     <a href="#insure" uk-toggle>Insurance</a>
 
 <!-- This is the modal -->
@@ -154,5 +213,23 @@ Nam elit dui, luctus semper neque ac, suscipit pharetra neque. Maecenas faucibus
 </div>
 </div>
 
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/logic.js"></script>
+
+<script>
+     $(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+    console.log(this);
+
+    // scrollTop - returns the position of the given element.
+    // animate - perform a custom animation of a set of CSS properties.
+    $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top
+    }, 2000);
+
+    console.log($.attr(this, 'href')); //returns attribute
+
+  });
+
+</script>
