@@ -3,7 +3,11 @@ $(document).ready(function(){
     $.get("/user_meds").then(function(data) {
 
         for (var i = 0; i < data.length; i++) {
-            $(".medication").append(`<li>Event: ${data[i].name}Date: ${data[i].date}</li>\n`);
+            $(".medication").append(`<li>
+            <p>Name: ${data[i].name}</p>
+            <p>Type: ${data[i].type}</p>
+            <p>Condition: ${data[i].condition}</p>
+            <p>Dose: ${data[i].dose}</p></li>\n`);
         }
     
         console.log(data);
