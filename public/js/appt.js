@@ -7,7 +7,7 @@ $(document).ready(function(){
             <p>Date: ${data[i].date}</p>
             <p>Time: ${data[i].time}</p>
             <p>Type: ${data[i].type}</p>
-            <p>Reason: ${data[i].reason}</p></li>\n`);
+            <p>Reason: ${data[i].reason}</p><hr class="uk-divider-small"></li>\n`);
         }
     
         console.log(data);

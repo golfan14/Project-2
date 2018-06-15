@@ -9,7 +9,7 @@ $(document).ready(function(){
             <p>Insured Name: ${data[i].insured_name}</p>
             <p>Id Number: ${data[i].id_number}</p>
             <p>Group Plan Number: ${data[i].group_id}</p>
-            <p>Date Effective: ${data[i].effective_date}</p></li>\n`);
+            <p>Date Effective: ${data[i].effective_date}</p><hr class="uk-divider-small"></li>\n`);
         }
     
         console.log(data);
