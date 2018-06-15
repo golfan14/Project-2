@@ -10,7 +10,7 @@
                 </ul>
             </div></div>
             {{!-- add git fork icon for the logo --}}
-            <a class="uk-navbar-item uk-logo" href="#" uk-icon="icon: git-fork; ratio: 3.5"></a>
+            <a class="uk-navbar-item uk-logo" href="#hob" uk-icon="icon: git-fork; ratio: 3.5"></a>
             <div class="uk-navbar-center-right"><div>
                 <ul class="uk-navbar-nav">
                     <li><a href="#medication">Medication</a></li>
@@ -106,23 +106,7 @@
         </div>
 
 
-        <article class="uk-comment uk-comment-primary">
-            <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
-                <div class="uk-width-auto">
-                    {{!-- <img class="uk-comment-avatar" src="../docs/images/avatar.jpg" width="80" height="80" alt=""> --}}
-                </div>
-                <div class="uk-width-expand">
-                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
-                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                        {{!-- <li><a href="#">12 days ago</a></li> --}}
-                        {{!-- <li><a href="#">Reply</a></li> --}}
-                    </ul>
-                </div>
-            </header>
-            <div class="uk-comment-body">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            </div>
-        </article>
+        
 
     </div>
 
@@ -162,11 +146,59 @@
         </div>
         <a href="#hob" uk-toggle>History of Body</a>
     </div>
+    <hr class="uk-divider-icon">
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
 <div class="uk-container uk-center" id="appt">
-    <a href="#appt" uk-toggle>Appointment</a>
+    
+
+
+
+    <article class="uk-comment uk-comment-primary">
+            <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    {{!-- <img class="uk-comment-avatar" src="../docs/images/avatar.jpg" width="80" height="80" alt=""> --}}
+                </div>
+                <div class="uk-width-expand">
+                    <h3 class=" uk-margin-remove uk-text-center"><span uk-icon="icon: link">Fix My Body</span></h3>
+                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                        {{!-- <li><a href="#">12 days ago</a></li> --}}
+                        {{!-- <li><a href="#">Reply</a></li> --}}
+                    </ul>
+                </div>
+            </header>
+           <div class="box">
+                <div class="uk-card uk-card-large uk-card-default uk-card-body">
+                
+                    <ul class="uk-list uk-list-large uk-list-divider appointment">
+                        {{!-- 
+                        -Cannot get scroll to work 
+                        -Connot get sizing to edit 
+                        -
+                        --}}
+                    
+                    </ul>
+
+                </div>
+            </div>
+            <a href="#appt" uk-toggle>Add Appointment</a>
+    </article>
+    <hr class="uk-divider-icon">
+
+
+
+
 
 <!-- This is the modal -->
 <div id="appt" uk-modal>
@@ -196,20 +228,103 @@
     </div>
 </div>
 
-<div class="box">
-    <div class="uk-card uk-card-large uk-card-default uk-card-body">
-      
 
-        <ul class="uk-list uk-list-large uk-list-divider appointment">
-
-        </ul>
-
-    </div>
-</div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="uk-container" id="medication">
-    <a href="#meds" uk-toggle>Medication</a>
+    
+
+
+        <div class="uk-child-width-expand@s" uk-grid>
+            <div class="uk-grid-item-match">
+                <div class="uk-card uk-card-default uk-card-body">
+                    <div class="uk-child-width-expand@s" uk-grid>
+                        <div class="uk-grid-item-match">
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <h3>Medicate My Body</h3>
+                                <div class="box">
+                                    <div class="uk-card uk-card-large uk-card-default uk-card-body">
+                                    
+                                        <ul class="uk-list uk-list-large uk-list-divider medication">
+                                            {{!-- 
+                                            -Cannot get scroll to work 
+                                            -Connot get sizing to edit 
+                                            -
+                                            --}}
+                                        
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <a href="#meds" uk-toggle>Add Medication</a>
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <h3>Insure My Body</h3>
+                           <div class="box">
+                                <div class="uk-card uk-card-large uk-card-default uk-card-body">
+                                
+                                    <ul class="uk-list uk-list-large uk-list-divider insurance">
+                                        {{!-- every added item goes here
+                                        --}}
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <a href="#insure" uk-toggle>Add Insurance</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {{!-- <div>
+                <h3>Heading</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+               
+            </div> --}}
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- This is the modal -->
 <div id="meds" uk-modal>
@@ -238,25 +353,10 @@
     </div>
 </div>
 
-<div class="box">
-    <div class="uk-card uk-card-large uk-card-default uk-card-body">
-      
-        <ul class="uk-list uk-list-large uk-list-divider medication">
-            {{!-- 
-            -Cannot get scroll to work 
-            -Connot get sizing to edit 
-            -
-            --}}
-           
-        </ul>
-
-    </div>
-</div>
 
 </div>
 <div class="uk-container" id="insure">
-    <a href="#insure" uk-toggle>Insurance</a>
-
+    
 <!-- This is the modal -->
 <div id="insure" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
@@ -289,16 +389,7 @@
         </form>
     </div>
 </div>
-<div class="box">
-    <div class="uk-card uk-card-large uk-card-default uk-card-body">
-      
-        <ul class="uk-list uk-list-large uk-list-divider insurance">
-            {{!-- every added item goes here
-             --}}
-        </ul>
 
-    </div>
-</div>
 </div>
 
 
