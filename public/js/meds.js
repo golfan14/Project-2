@@ -5,9 +5,9 @@ $(document).ready(function(){
         for (var i = 0; i < data.length; i++) {
             $(".medication").append(`<li>
             <p>Name: ${data[i].name}</p>
-            <p>Type: ${data[i].is_prescription}</p>
+            <p>Prescription: ${data[i].is_prescription}</p>
             <p>Condition: ${data[i].condition}</p>
-            <p>Dose: ${data[i].dose}</p></li>\n`);
+            <p>Dose: ${data[i].dose}</p><hr class="uk-divider-small"></li>\n`);
         }
     
         console.log(data);
