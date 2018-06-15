@@ -5,7 +5,7 @@ $(document).ready(function(){
         for (var i = 0; i < data.length; i++) {
             $(".history").append(`<li>
             <p>Event: ${data[i].event}</p>
-            <p>Date: ${data[i].date}</p></li>\n`);
+            <p>Date: ${data[i].date}</p><hr class="uk-divider-small"></li>\n`);
         }
     
         console.log(data);

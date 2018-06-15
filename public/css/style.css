@@ -6,3 +6,19 @@ overflow:auto;
 
 }
    
+/* .spacer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+
+.footer{
+    margin-top:20px;
+
+}
+/* .footer-descrip {
+    font-size: 2rem;
+    float: top;
+} */
+.cardBody {
+    margin-bottom: 2rem;
+}
